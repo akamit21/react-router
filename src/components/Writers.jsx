@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Writers = props => {
+export default ({ match: { url }, writers }) => {
   return (
     <ul>
-      {props.writers.map(({ _id, name }) => (
+      {writers.map(({ _id, name }) => (
         <li key={_id}>
-          <Link to="">{name}</Link>
+          <Link to={`${url}/${_id}`}>{name}</Link>
         </li>
       ))}
     </ul>
   );
 };
-
-export default Writers;
