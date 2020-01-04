@@ -1,7 +1,10 @@
 import React from "react";
 import "./App.css";
-import { Link, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
+
 import Writers from "./components/Writers";
+import Navbar from "./components/Navbar";
+import Routes from "./routes/Routes";
 
 class App extends React.Component {
   constructor() {
@@ -19,15 +22,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <ul>
-          <li>
-            <Link>Home</Link>
-          </li>
-          <li>
-            <Link to="/writers">Writers</Link>
-          </li>
-        </ul>
-        <Route exact path="/" render={() => <div>kljkjh</div>} />
+        <Navbar />
+        <Routes />
         <Route
           path="/writers"
           render={props => <Writers {...props} writers={this.state.writers} />}
